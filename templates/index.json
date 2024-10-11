@@ -9,22 +9,45 @@
 */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "custom_liquid_Xb98NA": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\nvideo {\n    width: 100%;\n    height: calc(100vh - 5rem - 2.375rem);\n    display: block;\n    margin: 0 auto;\nobject-fit: cover;\n}\n</style>\n\n<video muted autoplay playsinline loop>\n    <source src=\"https://cdn.shopify.com/videos/c/o/v/0fef624638004947a5efcf46dd46c864.mp4\" \n            type=\"video/mp4\">\n    <source src=\"https://cdn.shopify.com/videos/c/o/v/0fef624638004947a5efcf46dd46c864.mp4\" \n            type=\"video/mp4\">\n</video>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_x9Gg9H": {
+      "type": "rich-text",
       "blocks": {
-        "heading": {
+        "heading_8tRUyt": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "Friends & Family Sale",
+            "heading_size": "h2"
           }
         },
-        "button": {
-          "type": "buttons",
+        "heading_DT6KCE": {
+          "type": "heading",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "heading": "<strong>UP TO 65% OFF</strong>",
+            "heading_size": "hxxl"
+          }
+        },
+        "heading_KVAphR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Now until October 9th, App users receive an exclusive sitewide discount on all in-app purchases.",
+            "heading_size": "h2"
+          }
+        },
+        "button_DbNx37": {
+          "type": "button",
+          "settings": {
+            "button_label": "FIND OUT MORE",
+            "button_link": "",
+            "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -32,53 +55,119 @@
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "heading_8tRUyt",
+        "heading_DT6KCE",
+        "heading_KVAphR",
+        "button_DbNx37"
+      ],
+      "custom_css": [
+        ".rich-text--full-width {background-image: url(\"https://cdn.shopify.com/s/files/1/0889/5440/5209/files/Mask_group.jpg?v=1728551810\"); background-repeat: no-repeat; background-size: cover;}",
+        ".button[aria-disabled=\"true\"] {opacity: 1 !important;}"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "featured_collection_FrMgqA": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "BEST-SELLING PACKS",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "men",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
+        "title": "SHOP BY CATEGORY",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 12,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "outline",
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "custom_section_aEUhKV": {
+      "type": "custom-section",
+      "blocks": {
+        "social_yah36f": {
+          "type": "social",
+          "settings": {
+            "text": "Facebook",
+            "url": "#"
+          }
+        },
+        "paragraph_YnTTMM": {
+          "type": "paragraph",
+          "settings": {
+            "text": "Lorem ipsum dolor init"
+          }
+        },
+        "image_TY6jM4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/32b3863554f4686d825d9da18a24cfc6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "social_yah36f",
+        "paragraph_YnTTMM",
+        "image_TY6jM4"
+      ],
+      "settings": {
+        "text": "Test Heading",
+        "color": "#000000"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "custom_liquid_Xb98NA",
+    "rich_text_x9Gg9H",
+    "featured_collection_FrMgqA",
+    "featured_collection",
+    "custom_section_aEUhKV"
   ]
 }

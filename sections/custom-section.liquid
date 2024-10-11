@@ -1,0 +1,211 @@
+{% for block in section.blocks %}
+    {% if block.type == 'paragraph' %}
+        <p>{{ block.settings.text }}</p>
+    {% endif %}
+{% endfor %}
+
+<h1 style="color: {{ section.settings.color }}">{{ section.settings.text }}</h1>
+
+{% for block in section.blocks %}
+    {% if block.type == 'social' %}
+        <a href="{{ block.settings.url }}">{{ block.settings.text }}</a>
+        {% elsif block.type == '@app' %}
+        {% render block %}
+    {% endif %}
+{% endfor %}
+
+<div class="page-width page-width-desktop">
+    ​<h2>{{ collections['adidas'].title }}</h2>
+</div>
+
+<div class="collection page-width page-width-desktop">
+    {% for product in collections['adidas'].products %}
+        <div class="card">
+            <div class="card--img">
+                <a href="{{ product.url }}">
+                    <img src="{{ product.featured_image | image_url }}" width="400" height="260"/>
+                </a>
+                <form method="post" action="/cart/add">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                    <input type="submit" value="" class="btn" />
+                </form>
+            </div>
+            
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.price | money }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% stylesheet %}
+    .custom-header {
+        background: #f8f8f8;
+        padding: 60px 0;
+    }
+
+    .collection {
+        display: flex;
+        gap: 3.2rem;
+    }
+
+    .card {
+        flex: 1;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        overflow: hidden;
+        padding: 10px;
+        border-radius: 0;
+        filter: drop-shadow(0px 5px 10px rgba(115, 119, 120, .2));
+    }
+
+    .card:hover {
+        filter: drop-shadow(0px 5px 10px #737778);
+    }
+
+    .card--img {
+        position: relative;
+    }
+
+    .card--img form {
+        position: absolute;
+        top: auto;
+        bottom: 20px;
+        right: 5px;
+        left: auto;
+    }
+
+    .card--img input[type=submit] {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        background-color: #f8f8f8;
+        border: 1px solid #000;
+    }   
+
+    .card--img input[type=submit]:before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 25px;
+        margin: auto;
+        background: red;
+    }
+
+    .card--img input[type=submit]:after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 25px;
+        margin: auto;
+        transform: rotate(180deg);
+        background: red;
+    }
+
+    .card--img img {
+        width: 100%;
+        height: 100%;
+        max-height: 388px;
+        object-fit: contain;
+    }
+{% endstylesheet %}
+
+{% javascript %}
+    // alert('your mum')
+{% endjavascript %}
+
+{% schema %}
+{
+    "name": "Custom Section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Text colour",
+            "default": "#000000"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Default custom section",
+            "settings": {
+                "text": "Default text"
+            },
+            "blocks": [
+                {
+                    "type": "paragraph"
+                },
+                {
+                    "type": "social",
+                    "settings": {
+                        "url": "#",
+                        "text": "Twitter"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Red custom section",
+            "settings": {
+                "text": "Red text"
+            }
+        }
+    ],
+    "tag": "header",
+    "class": "custom-header",
+    "limit": 1,
+    "blocks": [
+        {
+            "type": "@app"
+        },
+        {
+            "name": "Social Link",
+            "type": "social",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "URL"
+                }
+            ]
+        },
+        {
+            "name": "Paragraph",
+            "type": "paragraph",
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Text"
+                }
+            ]
+        },
+        {
+            "name": "Image Picker",
+            "type": "image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image Picker"
+                }
+            ]
+        }
+    ],
+    "max_blocks": 3,
+    "disabled_on": {
+        "templates": ["page"]
+    }
+}
+{% endschema %}

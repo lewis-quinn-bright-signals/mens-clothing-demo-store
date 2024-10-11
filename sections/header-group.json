@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "SHOP ON APP OR DOWNLOAD NOW!",
             "link": ""
           }
         }
@@ -25,8 +25,11 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "custom_css": [
+        ".announcement-bar__message {font-size: 1.1rem; min-height: 2.375rem; letter-spacing: 0rem;}"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-4",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -37,12 +40,20 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        ".header {display: flex; justify-content: space-between; max-width: none; padding: 1rem 7.5rem;}",
+        ".header__inline-menu {display: flex; flex: 1; justify-content: center; font-weight: 700;}",
+        ".header__menu-item {font-size: 1.5rem;}",
+        ".list-menu li:nth-child(3) .header__menu-item {color: #971b1b; text-transform: uppercase;}",
+        ".header .header__active-menu-item {text-decoration: none;}",
+        ".header__active-menu-item:hover {text-decoration: underline;}"
+      ],
       "settings": {
         "logo_position": "middle-left",
-        "menu": "main-menu",
+        "menu": "new-home",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
+        "show_line_separator": false,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
@@ -50,8 +61,8 @@
         "enable_customer_avatar": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     }
   },
